@@ -79,7 +79,67 @@ arr[[4, 3, 0, 6]]
 arr[[-3, -5, -7]]
 arr = np.arange(32).reshape((8, 4))
 arr[[1, 5, 7, 2],[0, 3, 1, 2]]
-arr[[1, 5, 7, 2]][:, [0, 3, 1, 2]]
+arr[[1, 5, 7, 2]][:, [0, 3, 1, 2]] #???
+
+arr = np.arange(15).reshape((3, 5))
+arr.T
+arr = np.random.randn(6, 3)
+np.dot(arr.T, arr)
+arr = np.arange(16).reshape((2, 2, 4))
+arr.transpose((1, 0, 2))
+arr.swapaxes(1, 2)
+
+arr = np.arange(10)
+np.sqrt(arr)
+np.exp(arr)
+x = np.random.randn(8)
+y = np.random.randn(8)
+np.maximum(x, y)
+arr = np.random.randn(7) * 5
+remainder, whole_part = np.modf(arr)
+np.sqrt(arr, arr)
+
+points = np.arange(-5, 5, 0.01)
+xs, ys = np.meshgrid(points, points)
+z = np.sqrt(xs ** 2 + ys ** 2)
+
+xarr = np.array([1.1, 1.2, 1.3, 1.4, 1.5])
+yarr = np.array([2.1, 2.2, 2.3, 2.4, 2.5])
+cond = np.array([True, False, True, True, False])
+result = np.where(cond, xarr, yarr)
+arr = np.random.randn(4, 4)
+np.where(arr > 0, 2, -2)
+np.where(arr > 0, 2, arr)
+
+arr = np.random.randn(5, 4)
+arr.mean()
+np.mean(arr)
+arr.sum()
+arr.mean(axis=1)
+arr.sum(axis=0)
+arr = np.array([0, 1, 2, 3, 4, 5, 6, 7])
+arr.cumsum()
+arr = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
+arr.cumsum(axis=0)
+arr.cumprod(axis=1)
+
+arr = np.random.randn(100)
+(arr > 0).sum()
+bools = np.array([False, False, True, False])
+bools.any()
+bools.all()
+
+arr = np.random.randn(6)
+arr.sort()
+arr = np.random.randn(5, 3)
+arr.sort(1)
+
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+np.unique(names)
+ints = np.array([3, 3, 3, 2, 2, 1, 1, 4, 4])
+np.unique(ints)
+values = np.array([6, 0, 0, 3, 2, 5, 6])
+np.in1d(values, [2, 3, 6])
 
 # 线性代数
 x = np.array([[1., 2., 3.], [4., 5., 6.]])
